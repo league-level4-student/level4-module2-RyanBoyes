@@ -32,13 +32,35 @@ public class StringMethods {
 
 	// Given Strings s1 and s2, return the longer String
 	public static String longerString(String s1, String s2) {
-		return null;
+		int len1 = s1.length();
+		int len2 = s2.length();
+		if(len1>len2) {
+			return s1;
+		}
+		else if(len2>len1) {
+			return s2;
+		}
+		else {
+			return "equal";
+		}
+		
+		
 	}
 
 	
 	// if String s contains the word "underscores", change all of the spaces to underscores
 	public static String formatSpaces(String s) {
-		return null;
+		
+		if(s.contains("underscores")) {
+			s.replace(' ', '_');
+			return s;
+		}
+		else {
+			return s;
+		}
+		
+		
+		
 	}
 
 	
@@ -46,12 +68,45 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		return null;
+		String news1 = s1.trim();
+		String news2 = s2.trim();
+		String news3 = s3.trim();
+		
+		int l1 = news1.length()-1;
+		int l2 = news2.length()-1;
+		int l3 = news3.length()-1;
+		
+		char char1 = news1.charAt(l1);
+		char char2 = news2.charAt(l2);
+		char char3 = news3.charAt(l3);
+		
+		
+		if(char1<char2) {
+			if(char1<char3) {
+				return news1;
+			}
+		}
+		else if(char2<char1) {
+			if(char2<char3) {
+				return news2;
+			}
+		}
+		else {
+			return news3;
+		}
+		return news3;
+		
+
 	}
 	
 	
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
+		int sum = 0;
+		
+		
+		
+		
 		return 0;
 	}
 	

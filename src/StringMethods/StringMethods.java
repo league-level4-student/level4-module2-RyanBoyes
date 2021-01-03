@@ -103,17 +103,43 @@ public class StringMethods {
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
 		int sum = 0;
+		int a  =  0;
 		
+		for (int i = 0; i < s.length(); i++) {
+			if(Character.isDigit(s.charAt(i))) {
+	
+				int num = Integer.parseInt(s.charAt(i)+"");
+				sum = sum + num;
+			
+				
+				
+			
+			}
+			
+		}
+
+	
 		
-		
-		
-		return 0;
+		return sum;
 	}
 	
 	
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
-		return 0;
+		int times =  0;
+		int index = 0;
+		
+
+		while(s.contains(substring)) {
+			index = s.indexOf(substring, index+substring.length());
+			s = s.substring(s.indexOf(index));
+			
+			times++;
+		System.out.println(s);
+	}
+		
+		System.out.println(times);
+		return times;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s

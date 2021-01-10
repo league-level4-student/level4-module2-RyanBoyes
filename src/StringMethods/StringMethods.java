@@ -52,7 +52,7 @@ public class StringMethods {
 	public static String formatSpaces(String s) {
 		
 		if(s.contains("underscores")) {
-			s.replace(' ', '_');
+			s = s.replace(' ', '_');
 			return s;
 		}
 		else {
@@ -131,32 +131,54 @@ public class StringMethods {
 		
 
 		while(s.contains(substring)) {
-			index = s.indexOf(substring, index+substring.length());
-			s = s.substring(s.indexOf(index));
-			
 			times++;
-		System.out.println(s);
+			index = s.indexOf(substring) + substring.length();
+			s = s.substring(index);
+			
+	
+	
 	}
 		
-		System.out.println(times);
+		
 		return times;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s
 	public static String encrypt(String s, char key) {
-		return null;
+		
+		
+		return Utilities.encrypt(s.getBytes(), (byte) key);
+		
 	}
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
-		return null;
+		
+		
+		return Utilities.decrypt(s, (byte) key);
 	}
 
 
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
-		return 0;
+		int index = 0;
+		int times = 0;
+		
+		while(s.contains(substring)) {
+			
+			if(s.indexOf(" ")-substring.length()==s.indexOf(substring)) {
+				times++;
+				index = s.indexOf(" ");
+				
+			}
+			s = s.substring(index+1);
+		
+			System.out.println(s);
+		}
+		
+		System.out.println(times);
+		return times;
 	}
 	
 

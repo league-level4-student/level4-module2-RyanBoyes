@@ -59,6 +59,7 @@ class StringMethodsTest {
 	
 	@Test
 	void testWordsEndWithSubstring() {
+		assertEquals(2, StringMethods.wordsEndsWithSubstring("Here there", "e"));
 		assertEquals(3, StringMethods.wordsEndsWithSubstring("He quietly and slowly backed away from the bear that was hungrily looking at him", "ly"));
 		assertEquals(2, StringMethods.wordsEndsWithSubstring("He was visiting The League of Amazing Programmers.", "ing"));
 		assertEquals(7, StringMethods.wordsEndsWithSubstring("Here are multiple words that have the same letter at the end.", "e"));

@@ -166,18 +166,38 @@ public class StringMethods {
 		int times = 0;
 		
 		while(s.contains(substring)) {
-			
+		
 			if(s.indexOf(" ")-substring.length()==s.indexOf(substring)) {
 				times++;
 				index = s.indexOf(" ");
+				s = s.substring(index);
 				
+				if(index==-1) {
+					break;
+				}
 			}
-			s = s.substring(index+1);
+			
+			else if(s.indexOf(" ")==-1&&s.length()>=substring.length()) {
+				if(s.length()-substring.length()==s.indexOf(substring)){
+					times++;
+					
+					break;
+				}
+				else {
+					s = s.substring(1);
+				}
+			}
+			else {
+				s = s.substring(1);
+			}
 		
-			System.out.println(s);
+		
+			
+		
+			
 		}
 		
-		System.out.println(times);
+	
 		return times;
 	}
 	
@@ -186,7 +206,18 @@ public class StringMethods {
 	// of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
-		return 0;
+		
+		
+		int start = s.indexOf(substring)+substring.length();
+		int end = s.length()-substring.length();
+		
+		s = s.substring(start, end);
+		System.out.println(s);
+		System.out.println(s.length());
+		
+		
+		
+		return s.length();
 	}
 
 

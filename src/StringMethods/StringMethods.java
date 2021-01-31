@@ -212,8 +212,7 @@ public class StringMethods {
 		int end = s.length()-substring.length();
 		
 		s = s.substring(start, end);
-		System.out.println(s);
-		System.out.println(s.length());
+		
 		
 		
 		
@@ -225,7 +224,32 @@ public class StringMethods {
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
-		return true;
+		String reverseS = "";
+		
+		s = s.trim();
+		s = s.replace(" ", "");
+		s = s.replace(",", "");
+		s = s.replace(":", "");
+		s = s.replace(".", "");
+		s = s.replace("–", "");
+		s =  s.replace("?", "");
+		s = s.toLowerCase();
+	
+		char[] indexS = s.toCharArray();
+		for(int i = s.length()-1; i>=0; i--) {
+			reverseS += indexS[i];
+		}
+		
+		System.out.println(s);
+		System.out.println(reverseS);
+		
+		if(reverseS.equals(s)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 }
